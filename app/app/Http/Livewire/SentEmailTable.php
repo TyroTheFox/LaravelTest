@@ -8,13 +8,24 @@ use App\Models\SentEmail;
 
 class SentEmailTable extends Component
 {
+    /**
+     * Array of table headers
+     */
     public $headers = [
         "To",
         "Message",
         "Time Sent",
     ];
+    /**
+     * Array of row data
+     */
     public $tableRows = [];
 
+    /**
+     * Returns a rendered view
+     *
+     * @return View
+     */
     public function render()
     {
         $id = Auth::id();

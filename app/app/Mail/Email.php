@@ -11,6 +11,9 @@ class Email extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
+    /**
+     * The message the email contains
+     */
     public $messageString;
 
     /**

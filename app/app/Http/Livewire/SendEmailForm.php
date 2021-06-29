@@ -15,17 +15,28 @@ class SendEmailForm extends Component
     public $messageString;
     public $messageSent = false;
 
+    /**
+     * On mount will set defaults
+     */
     public function mount()
     {
         $this->messageString = '';
         $this->address = '';
     }
 
+    /**
+     * Dispatches an email job
+     */
     public function sendEmail()
     {
         SendEmailMessage::dispatch($this->address, $this->messageString);
     }
 
+    /**
+     * Returns a rendered view
+     *
+     * @return View
+     */
     public function render()
     {
         return view('livewire.send-email-form');
